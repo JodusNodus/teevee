@@ -1,5 +1,5 @@
 # teevee
-A handy CLI tool to watch TV shows from zooqle with webtorrent.
+A handy CLI tool to watch TV shows from [zooqle](https://zooqle.com) with [webtorrent](https://webtorrent.io).
 
 ```bash
 > npm install -g teevee
