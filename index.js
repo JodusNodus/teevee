@@ -201,7 +201,7 @@ async function addCommand(imdbId) {
   spinner.stop();
 
   if (!tvShow) {
-    err("Nothing found");
+    output.err("Nothing found");
     return;
   }
 
@@ -236,7 +236,7 @@ async function confirmRemoveTvShow(title) {
 async function removeCommand() {
   const tvShows = config.get("tvShows");
   if (!tvShows || tvShows.length < 1) {
-    err("You haven't added any TV shows.");
+    output.err("You haven't added any TV shows.");
     return;
   }
 
@@ -269,7 +269,10 @@ async function watchCommand(options) {
   webtorrentArgs.push(magnet);
 
   const webtorrent = child_process.spawn("webtorrent", webtorrentArgs);
+  const spinner = output.spinner("Buffering");
+
   webtorrent.on("close", code => {
+		spinner.stop();
     process.exit();
   });
   webtorrent.stdout.pipe(stdout);
