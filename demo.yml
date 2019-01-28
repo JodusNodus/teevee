@@ -18,12 +18,12 @@ config:
   # Explicitly set the number of columns
   # or use `auto` to take the current
   # number of columns of your shell
-  cols: 120
+  cols: 198
   
   # Explicitly set the number of rows
   # or use `auto` to take the current
   # number of rows of your shell
-  rows: 30
+  rows: 48
   
   # Amount of times to repeat GIF
   # If value is -1, play once
@@ -108,79 +108,163 @@ config:
   
 # Records, feel free to edit them
 records:
-  - delay: 1122
+  - delay: 941
     content: 'potato:teevee jodus$ '
-  - delay: 2305
+  - delay: 1087
     content: t
-  - delay: 56
-    content: e
-  - delay: 216
-    content: e
-  - delay: 312
-    content: v
-  - delay: 168
-    content: e
-  - delay: 200
-    content: e
-  - delay: 360
-    content: ' '
-  - delay: 968
-    content: a
-  - delay: 96
-    content: d
-  - delay: 176
-    content: d
   - delay: 112
-    content: ' '
-  - delay: 507
-    content: compound glad accurate court
-  - delay: 716
-    content: "^C\r\npotato:teevee jodus$ "
-  - delay: 1968
-    content: h
-  - delay: 400
-    content: "\b\e[K"
+    content: e
+  - delay: 193
+    content: e
+  - delay: 367
+    content: v
+  - delay: 144
+    content: e
   - delay: 200
-    content: o
-  - delay: 184
-    content: i
-  - delay: 161
+    content: e
+  - delay: 183
     content: ' '
-  - delay: 214
-    content: m
-  - delay: 24
+  - delay: 521
     content: a
-  - delay: 105
-    content: t
-  - delay: 64
-    content: e
-  - delay: 344
+  - delay: 112
+    content: d
+  - delay: 168
+    content: d
+  - delay: 208
+    content: ' '
+  - delay: 273
+    content: tt2575988
+  - delay: 478
     content: "\r\n"
-  - delay: 7
-    content: "bash: oi: command not found\r\npotato:teevee jodus$ "
-  - delay: 1273
-    content: e
-  - delay: 152
-    content: x
-  - delay: 128
-    content: i
-  - delay: 264
+  - delay: 733
+    content: "\e[?25l\e[36m⠋\e[39m Searching for TV shows"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠙\e[39m Searching for TV shows"
+  - delay: 84
+    content: "\e[2K\e[1G\e[36m⠹\e[39m Searching for TV shows"
+  - delay: 84
+    content: "\e[2K\e[1G\e[36m⠸\e[39m Searching for TV shows"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠼\e[39m Searching for TV shows"
+  - delay: 79
+    content: "\e[2K\e[1G\e[36m⠴\e[39m Searching for TV shows"
+  - delay: 84
+    content: "\e[2K\e[1G\e[36m⠦\e[39m Searching for TV shows"
+  - delay: 84
+    content: "\e[2K\e[1G\e[36m⠧\e[39m Searching for TV shows"
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠇\e[39m Searching for TV shows"
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠏\e[39m Searching for TV shows"
+  - delay: 218
+    content: "\e[2K\e[1G\e[?25h\e[34mTitle:\e[39m Silicon Valley\r\n\e[34mRelease date:\e[39m April 6, 2014\r\n\e[34mSummary:\e[39m Follows the struggle of Richard Hendricks, a silicon valley engineer trying to build his own company called Pied Piper\r\n"
+  - delay: 11
+    content: "\e[32m?\e[39m \e[1mIs this what you are looking for?\e[22m\e[0m \e[0m\e[2m(Y/n) \e[22m\e[42D\e[42C"
+  - delay: 1065
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mIs this what you are looking for?\e[22m\e[0m \e[0m\e[36mYes\e[39m\e[39D\e[39C\r\n"
+  - delay: 30
+    content: "\e[32m>\e[39m \e[1m\e[1m\e[34mSilicon Valley\e[39m\e[22m has been added\e[22m\r\n\e[?25h"
+  - delay: 19
+    content: 'potato:teevee jodus$ '
+  - delay: 1163
     content: t
-  - delay: 808
+  - delay: 96
+    content: e
+  - delay: 192
+    content: e
+  - delay: 224
+    content: v
+  - delay: 104
+    content: e
+  - delay: 176
+    content: e
+  - delay: 305
+    content: ' '
+  - delay: 63
+    content: w
+  - delay: 176
+    content: a
+  - delay: 120
+    content: t
+  - delay: 200
+    content: c
+  - delay: 152
+    content: h
+  - delay: 480
+    content: ' '
+  - delay: 152
+    content: '-'
+  - delay: 168
+    content: '-'
+  - delay: 200
+    content: i
+  - delay: 184
+    content: 'n'
+  - delay: 720
+    content: a
+  - delay: 847
     content: "\b\e[K"
-  - delay: 250
+  - delay: 280
     content: "\b\e[K"
-  - delay: 34
-    content: "\b\e[K"
-  - delay: 34
-    content: "\b\e[K"
-  - delay: 34
-    content: "\a"
-  - delay: 34
-    content: "\a"
-  - delay: 35
-    content: "\a"
-  - delay: 33
-    content: "\a"
-  - delay: 802
+  - delay: 209
+    content: i
+  - delay: 120
+    content: 'n'
+  - delay: 112
+    content: a
+  - delay: 280
+    content: "\r\n"
+  - delay: 557
+    content: "\e[?25l\e[32m?\e[39m \e[1mChoose a TV show\e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n\e[36m❯ Silicon Valley\e[39m \r\n  Archer \r\n  True Detective \r\n  Suits \r\n  The Orville \r\n  Game of Thrones \r\n  Westworld \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 1436
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mChoose a TV show\e[22m\e[0m \e[0m\e[36mSilicon Valley\e[39m\e[33D\e[33C\r\n\e[?25h\e[?25l\e[36m⠋\e[39m Loading show information"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠙\e[39m Loading show information"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠹\e[39m Loading show information"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠸\e[39m Loading show information"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠼\e[39m Loading show information"
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠴\e[39m Loading show information"
+  - delay: 85
+    content: "\e[2K\e[1G\e[36m⠦\e[39m Loading show information"
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠧\e[39m Loading show information"
+  - delay: 84
+    content: "\e[2K\e[1G\e[36m⠇\e[39m Loading show information"
+  - delay: 215
+    content: "\e[2K\e[1G\e[?25h\e[?25l\e[32m?\e[39m \e[1mPick a season\e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n\e[36m❯ Season 5\e[39m \r\n  Season 4 \r\n  Season 3 \r\n  Season 2 \r\n  Season 1 \e[11D\e[11C"
+  - delay: 1183
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a season\e[22m\e[0m \e[0m\r\n  Season 5 \r\n\e[36m❯ Season 4\e[39m \r\n  Season 3 \r\n  Season 2 \r\n  Season 1 \e[11D\e[11C"
+  - delay: 319
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a season\e[22m\e[0m \e[0m\e[36mSeason 4\e[39m\e[24D\e[24C\r\n\e[?25h\e[?25l\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n\e[36m❯ *) Compilations & Specials\e[39m \r\n  1) Success Failure \r\n  2) Terms of Service \r\n  3) Intellectual Property \r\n  4) Teambuilding Exercise \r\n  5) The Blood Boy \r\n  6) Customer Service \r\n  7) The Patent Troll \r\n  8) The Keenan Vortex \r\n  9) Hooli-Con \e[15D\e[15C"
+  - delay: 669
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\r\n  *) Compilations & Specials \r\n\e[36m❯ 1) Success Failure\e[39m \r\n  2) Terms of Service \r\n  3) Intellectual Property \r\n  4) Teambuilding Exercise \r\n  5) The Blood Boy \r\n  6) Customer Service \r\n  7) The Patent Troll \r\n  8) The Keenan Vortex \r\n  9) Hooli-Con \e[15D\e[15C"
+  - delay: 200
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\r\n  *) Compilations & Specials \r\n  1) Success Failure \r\n\e[36m❯ 2) Terms of Service\e[39m \r\n  3) Intellectual Property \r\n  4) Teambuilding Exercise \r\n  5) The Blood Boy \r\n  6) Customer Service \r\n  7) The Patent Troll \r\n  8) The Keenan Vortex \r\n  9) Hooli-Con \e[15D\e[15C"
+  - delay: 167
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\r\n  *) Compilations & Specials \r\n  1) Success Failure \r\n  2) Terms of Service \r\n\e[36m❯ 3) Intellectual Property\e[39m \r\n  4) Teambuilding Exercise \r\n  5) The Blood Boy \r\n  6) Customer Service \r\n  7) The Patent Troll \r\n  8) The Keenan Vortex \r\n  9) Hooli-Con \e[15D\e[15C"
+  - delay: 159
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\r\n  *) Compilations & Specials \r\n  1) Success Failure \r\n  2) Terms of Service \r\n  3) Intellectual Property \r\n\e[36m❯ 4) Teambuilding Exercise\e[39m \r\n  5) The Blood Boy \r\n  6) Customer Service \r\n  7) The Patent Troll \r\n  8) The Keenan Vortex \r\n  9) Hooli-Con \e[15D\e[15C"
+  - delay: 192
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\r\n  *) Compilations & Specials \r\n  1) Success Failure \r\n  2) Terms of Service \r\n  3) Intellectual Property \r\n  4) Teambuilding Exercise \r\n\e[36m❯ 5) The Blood Boy\e[39m \r\n  6) Customer Service \r\n  7) The Patent Troll \r\n  8) The Keenan Vortex \r\n  9) Hooli-Con \e[15D\e[15C"
+  - delay: 399
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick an episode\e[22m\e[0m \e[0m\e[36m5) The Blood Boy\e[39m\e[34D\e[34C\r\n\e[?25h\e[?25l\e[36m⠋\e[39m Loading episode information"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠙\e[39m Loading episode information"
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠹\e[39m Loading episode information"
+  - delay: 85
+    content: "\e[2K\e[1G\e[36m⠸\e[39m Loading episode information"
+  - delay: 101
+    content: "\e[2K\e[1G\e[?25h\e[?25l\e[32m?\e[39m \e[1mPick a torrent\e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n\e[36m❯ ▲164 ▼12 - 455 MB - 720p\e[39m \r\n  ▲101 ▼131 - 378 MB - WEBRIP \r\n  ▲95 ▼18 - 140 MB - HDTV \r\n  ▲58 ▼7 - 840 MB - 1080p \e[26D\e[26C"
+  - delay: 1705
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a torrent\e[22m\e[0m \e[0m\e[36m▲164 ▼12 - 455 MB - 720p\e[39m\e[41D\e[41C\r\n\e[?25h"
+  - delay: 10390
+    content: "^C\e[?25h"
+  - delay: 14
+    content: "\r\npotato:teevee jodus$ "
+  - delay: 1039
     content: "logout\r\n"
