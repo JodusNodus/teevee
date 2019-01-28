@@ -12,6 +12,7 @@ A handy CLI tool to watch TV shows from zooqle with webtorrent.
 * [Nodejs](https://nodejs.org/en/)
 * [webtorrent-cli](https://github.com/webtorrent/webtorrent-cli)
 * A supported media player
+* macOS or Linux
 
 ## Usage
 ```
