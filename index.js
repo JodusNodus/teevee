@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-const tty = require('tty');
-const fs = require('fs');
+const os = require("os");
+const tty = require("tty");
+const fs = require("fs");
+const child_process = require("child_process");
 const Conf = require("conf");
 const process = require("process");
 const { promisify } = require("util");
@@ -15,13 +17,7 @@ const _ = require("lodash");
 
 const config = new Conf();
 
-const openStream = () => {
-	const fd = fs.openSync("/dev/tty", "r+");
-	const stdin = new tty.ReadStream(fd);
-	const stdout = new tty.WriteStream(fd);
-	return {stdin, stdout};
-}
-const {stdin, stdout} = openStream();
+const { stdin, stderr: stdout } = process;
 
 const output = {
   info: text => stdout.write(">".green + " " + text.bold + "\n"),
@@ -31,8 +27,8 @@ const output = {
 };
 
 /**
-* Zooqle API
-*/
+ * Zooqle API
+ */
 async function zooqleFetchByImdb(imdbId) {
   try {
     const { showResponse } = await zooqle.search(imdbId);
@@ -102,7 +98,7 @@ function deduceQualityFromTorrent(title) {
     ["720p", /720p/gi],
     ["HDTV", /HDTV|HD/gi],
     ["SDTV", /SDTV|SD/gi],
-    ["WEBRIP", /WEB/gi],
+    ["WEBRIP", /WEB/gi]
   ];
   for (const [quality, regex] of qualitySigns) {
     if (regex.test(title)) {
@@ -136,7 +132,7 @@ async function selectTorrent(torrents) {
   return highestSeeded[i];
 }
 
-async function watchCommand() {
+async function fetchCommand() {
   const tvShows = config.get("tvShows");
   if (!tvShows || tvShows.length < 1) {
     output.err("You haven't added any TV shows.");
@@ -166,7 +162,7 @@ async function watchCommand() {
   }
 
   const { magnet } = await selectTorrent(torrents);
-  console.log(magnet);
+  return magnet;
 }
 
 /**
@@ -245,7 +241,6 @@ async function removeCommand() {
   }
 
   const { title, imdbId } = await selectTvShow(tvShows);
-	output.info(imdbId);
 
   const confirmed = await confirmRemoveTvShow(title);
   if (!confirmed) {
@@ -256,6 +251,32 @@ async function removeCommand() {
   output.info(title.blue.bold + " has been removed");
 }
 
+/**
+ * Watch an episode
+ */
+async function watchCommand(options) {
+	const randomPort = Math.floor(Math.random() * 1000 + 8000);
+  const webtorrentArgs = ["download", "--quiet", "--port", randomPort, "-o", os.tmpdir()];
+  const passthroughArgs = ["vlc", "iina", "mplayer", "mpv", "xmbc"];
+  for (const option of passthroughArgs) {
+    if (options[option]) {
+      webtorrentArgs.push("--" + option);
+    }
+  }
+
+  const magnet = await fetchCommand();
+  if (!magnet) return;
+  webtorrentArgs.push(magnet);
+
+  const webtorrent = child_process.spawn("webtorrent", webtorrentArgs);
+  webtorrent.on("close", code => {
+    process.exit();
+  });
+  webtorrent.stdout.pipe(stdout);
+}
+
+program.description("CLI to stream TV shows with webtorrent");
+
 program
   .command("add <imdbID>")
   .description("Add a TV show to your collection with its IMDB ID.")
@@ -263,16 +284,29 @@ program
 
 program
   .command("remove")
-  .description("Remove a new TV show from your collection.")
+  .description("Remove a TV show from your collection.")
   .action(removeCommand);
 
 program
   .command("fetch")
   .description("Fetch a magnet URL for an episode from your collection.")
+  .action(async () => {
+    const magnet = await fetchCommand();
+    if (magnet) console.log(magnet);
+  });
+
+program
+  .command("watch")
+  .description("Stream an episode from your collection with webtorrent-cli.")
+  .option("--vlc", "Default, Use VLC as player")
+  .option("--iina", "Use IINA as player")
+  .option("--mplayer", "Use MPlayer as player")
+  .option("--mpv", "Use MPV as player")
+  .option("--xmbc", "Use XMBC as player")
   .action(watchCommand);
 
 program.parse(process.argv);
 
 if (!process.argv.slice(2).length) {
-  watchCommand();
+  program.outputHelp();
 }
