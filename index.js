@@ -169,9 +169,15 @@ async function fetchCommand() {
  * Add a new TV show
  */
 async function confirmTvShow({ title, from, summary }) {
-  console.log("Title:".blue, title);
-  console.log("Release date:".blue, from);
-  console.log("Summary:".blue, summary);
+  stdout.write(
+    "Title: ".blue +
+      title +
+      "\nRelease date: ".blue +
+      from +
+      "\nSummary: ".blue +
+      summary +
+			"\n"
+  );
   const question = {
     type: "confirm",
     name: "confirmTvShow",
@@ -255,13 +261,26 @@ async function removeCommand() {
  * Watch an episode
  */
 async function watchCommand(options) {
-	const randomPort = Math.floor(Math.random() * 1000 + 8000);
-  const webtorrentArgs = ["download", "--quiet", "--port", randomPort, "-o", os.tmpdir()];
+  const randomPort = Math.floor(Math.random() * 1000 + 8000);
+  const webtorrentArgs = [
+    "download",
+    "--quiet",
+    "--port",
+    randomPort,
+    "-o",
+    os.tmpdir()
+  ];
   const passthroughArgs = ["vlc", "iina", "mplayer", "mpv", "xmbc"];
+  let playerChosen = false;
   for (const option of passthroughArgs) {
     if (options[option]) {
       webtorrentArgs.push("--" + option);
+      playerChosen = true;
     }
+  }
+  if (!playerChosen) {
+    output.err("Please specify a player, check help for available options.");
+    return;
   }
 
   const magnet = await fetchCommand();
@@ -272,7 +291,7 @@ async function watchCommand(options) {
   const spinner = output.spinner("Buffering");
 
   webtorrent.on("close", code => {
-		spinner.stop();
+    spinner.stop();
     process.exit();
   });
   webtorrent.stdout.pipe(stdout);
@@ -301,7 +320,7 @@ program
 program
   .command("watch")
   .description("Stream an episode from your collection with webtorrent-cli.")
-  .option("--vlc", "Default, Use VLC as player")
+  .option("--vlc", "Use VLC as player")
   .option("--iina", "Use IINA as player")
   .option("--mplayer", "Use MPlayer as player")
   .option("--mpv", "Use MPV as player")
